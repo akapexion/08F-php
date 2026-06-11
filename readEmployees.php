@@ -10,7 +10,7 @@ include("config/db_connection.php");
 </head>
 <body>
 
-
+<a href="addEmployee.php">ADD New Employee</a>
 <table>
     <tr>
         <th>Index</th>
@@ -34,7 +34,7 @@ include("config/db_connection.php");
         <td><?php echo $display['employee_id'];  ?></td>
         <td> <?php echo $display['employee_name'] ?>  </td>
         <td>
-            <a href="">Edit</a>
+            <a href="updateEmployee.php?empID=<?php echo $display['employee_id']?>">Edit</a>
             <a href="">Delete</a>
         </td>
     </tr>

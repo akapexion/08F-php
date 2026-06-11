@@ -8,6 +8,8 @@
         $insert_query = "INSERT INTO employees(employee_name) VALUES('$name')";
 
         $execute = mysqli_query($connection_ref, $insert_query);
+
+        header("location: readEmployees.php");
     }
 
 ?>
