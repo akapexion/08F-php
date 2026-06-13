@@ -1,5 +1,19 @@
 <?php
 include("config/db_connection.php");
+
+
+if(isset($_GET['delete'])){
+
+    // DELETE FROM employees WHERE employee_id = 4;
+
+    $delete_query = "DELETE FROM employees WHERE employee_id = $_GET[delete]";
+    $execute = mysqli_query($connection_ref, $delete_query);
+
+    header("location:readEmployees.php");
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +49,7 @@ include("config/db_connection.php");
         <td> <?php echo $display['employee_name'] ?>  </td>
         <td>
             <a href="updateEmployee.php?empID=<?php echo $display['employee_id']?>">Edit</a>
-            <a href="">Delete</a>
+            <a href="?delete=<?php echo $display['employee_id']?>">Delete</a>
         </td>
     </tr>
     <?php
